@@ -1,0 +1,38 @@
+PODS:
+  - Charts (3.6.0):
+    - Charts/Core (= 3.6.0)
+  - Charts/Core (3.6.0)
+  - HMSegmentedControl (1.5.6)
+  - MXPagerView (0.2.1)
+  - MXParallaxHeader (1.1.0)
+  - MXSegmentedControl (1.1.0)
+  - MXSegmentedPager (4.0.0):
+    - MXPagerView (~> 0.2)
+    - MXParallaxHeader (~> 1.0)
+    - MXSegmentedControl (~> 1.1)
+
+DEPENDENCIES:
+  - Charts
+  - HMSegmentedControl
+  - MXSegmentedPager
+
+SPEC REPOS:
+  trunk:
+    - Charts
+    - HMSegmentedControl
+    - MXPagerView
+    - MXParallaxHeader
+    - MXSegmentedControl
+    - MXSegmentedPager
+
+SPEC CHECKSUMS:
+  Charts: b1e3a1f5a1c9ba5394438ca3b91bd8c9076310af
+  HMSegmentedControl: 34c1f54d822d8308e7b24f5d901ec674dfa31352
+  MXPagerView: ede184b5191b2ed689ccf05a750a9978cce42414
+  MXParallaxHeader: de3c867e10ba46e8f6e20c8ee1f2a910372b3b94
+  MXSegmentedControl: f39e46199a52cbc03b1c845e150215119f2542f5
+  MXSegmentedPager: 527ee76513c96e6607eebe473fe49b7ab4971616
+
+PODFILE CHECKSUM: 8d8e5fbd65d8310a56a5a94735d99fdcb97310c1
+
+COCOAPODS: 1.10.1

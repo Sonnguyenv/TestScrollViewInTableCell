@@ -12,11 +12,11 @@ class TableViewCell: UITableViewCell {
     @IBOutlet weak var collectionView: UICollectionView!
     
     private let paddingForCell: CGFloat = 30.0
-    var data = [["転帰／薬剤名12345", "死亡", "軽快", "回復", "後遺症あり"],
-                ["オセルタミビルリン酸塩", "336件", "594件", "298件", "41件"],
-                ["TAMIFLU", "6件", "30000件", "18件", "419件"],
-                ["vc", "6件", "1件", "11件", "11件"]
-    ]
+//    var data = [["転帰／薬剤名12345", "死亡", "軽快", "回復", "後遺症あり"],
+//
+//                ["TAMIFLU", "6件", "30000件", "18件", "419件"],
+//                ["vc", "6件", "1件", "11件", "11件"]
+//    ]
     
 //    var data = [
 //                ["vc", "6件", "1件", "11件", "11件"]
@@ -28,19 +28,24 @@ class TableViewCell: UITableViewCell {
 //        ["vc", "6件", "1件", "11件", "11件"],
 //        ["vc", "6件", "1件", "11件", "11件"]
 //    ]
+
+    var data = [["転帰／薬剤名12345", "死亡", "軽快", "回復", "後遺症あり"],
+
+                ["TAMIFLUTAMIFLUTAMIFLUTAMIFLUTAMIFLUTAMIFLUTAMIFLU", "6件", "30000件", "18件", "419件"],
+                ["VCVCVCVCVC", "6件", "1件", "11件", "11件"]
+    ]
     
-    var maxWidth: CGFloat = 0.0
     var compensateWidthForEachCell: CGFloat = 0.0
 
     var itemsSize: [CGFloat] = [100, 200, 300, 125]
     override func awakeFromNib() {
         super.awakeFromNib()
         setupCollectionView()
-        self.setupWithData(self.data)
     }
 
     override func layoutSubviews() {
         super.layoutSubviews()
+        self.setupWithData(self.data)
     }
 
     func setupCollectionView() {
@@ -48,15 +53,11 @@ class TableViewCell: UITableViewCell {
         self.collectionView.delegate = self
         self.collectionView.register(UINib(nibName: "CollectionViewCell2", bundle: nil),
                                      forCellWithReuseIdentifier: "CollectionViewCell2")
-        if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-            layout.minimumInteritemSpacing = 0
-            layout.minimumLineSpacing = 0
-        }
     }
     
     func setupWithData(_ data: [[String]]) {
         self.data = data
-        self.maxWidth = widthEstimatedWithData(data)
+        let maxWidth = widthEstimatedWithData(data)
         let compensateWidth = self.bounds.width - maxWidth - paddingForCell*CGFloat(data.count)
         compensateWidthForEachCell = compensateWidth/CGFloat(data.count)
         self.collectionView.reloadData()

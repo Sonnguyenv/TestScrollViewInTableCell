@@ -25,10 +25,10 @@ class CollectionViewCell2: UICollectionViewCell {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-
     }
     
     func setupWithValue(_ values: [String]) {
+        self.stackView.arrangedSubviews.forEach({$0.removeFromSuperview()})
         values.map { value -> UIButton in
             let label = UIButton(frame: .zero)
             label.setTitle(value, for: .normal)
@@ -43,9 +43,9 @@ class CollectionViewCell2: UICollectionViewCell {
         (stackView.arrangedSubviews.first as? UIButton)?.contentHorizontalAlignment = .center
     }
     
-    override func prepareForReuse() {
-        stackView.removeAllArrangedSubviews()
-    }
+//    override func prepareForReuse() {
+//        stackView.removeAllArrangedSubviews()
+//    }
 }
 
 
